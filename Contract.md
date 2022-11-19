@@ -5,7 +5,7 @@
 
 2. **Assistance**: We have a groupchat on iMessage for us all to communicate. We are all expected to check it at least once a day, so we should be expected to respond in <24 hours.
 
-3. **Respect** : Everyone in the group has met and have formed good relationships with each other. We are all friends outside of school and as such have naturally developed respect for each other. 
+3. **Respect** : We will always treat each other with curteousy and develop a team culture in which the expression of ideas is encouraged. To do this, we will never insult each other and only offer constructive criticism when we disagree.
 
 ## Collaboration
 
