@@ -1,5 +1,11 @@
 # Final Project
 
+Team Members
+* sjs17@illinois.edu
+* asanjay3@illinois.edu
+* sumayst2@illinois.edu
+* pgaka2@illinois.edu
+
 ## Leading Question 
 Our leading question is: given the OpenFlights dataset, a database which contains over 10,000 airports across the globe, what is the shortest flight path in miles between any two locations? 
 
