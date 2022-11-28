@@ -1,0 +1,4 @@
+
+int main() {
+    // run everything
+}
