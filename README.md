@@ -1,4 +1,4 @@
-# Final Project
+# CS225 Final Project
 
 Team Members
 * sjs17@illinois.edu
