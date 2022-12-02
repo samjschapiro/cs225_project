@@ -3,6 +3,8 @@
 
 using namespace std;
 
+
+
 unordered_map<string, vector<double>> getLatLongMap(string filename, int keyIdx){
     // Function: Parses and stores the latitude and longitude of each airport in the openflights dataset into a map
 

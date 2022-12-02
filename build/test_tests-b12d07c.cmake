@@ -1,0 +1,7 @@
+add_test( [==[LatLong map outputs latitude (Goroka)]==] /workspaces/cs225/cs225_project/build/test [==[LatLong map outputs latitude (Goroka)]==]  )
+set_tests_properties( [==[LatLong map outputs latitude (Goroka)]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/cs225_project/build)
+add_test( [==[LatLong map outputs longitude (Goroka)]==] /workspaces/cs225/cs225_project/build/test [==[LatLong map outputs longitude (Goroka)]==]  )
+set_tests_properties( [==[LatLong map outputs longitude (Goroka)]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/cs225_project/build)
+add_test( [==[Haversine is correct]==] /workspaces/cs225/cs225_project/build/test [==[Haversine is correct]==]  )
+set_tests_properties( [==[Haversine is correct]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/cs225_project/build)
+set( test_TESTS [==[LatLong map outputs latitude (Goroka)]==] [==[LatLong map outputs longitude (Goroka)]==] [==[Haversine is correct]==])

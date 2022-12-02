@@ -1,7 +1,7 @@
 ## Leading Question 
 Our leading question is: given the OpenFlights dataset, a database which contains over 10,000 airports across the globe, what is the shortest flight path in miles between any two locations? 
 
-To answer this, we will use Dijkstra's shortest path algorithm, which will take two nodes on a graph as an input and output the shortest path of directed edges between those two nodes. We will also solve for a general case (the shortest path between all pairs) using the Floyd-Warshall algorithm. 
+To answer this, we will use the Floyd-Warshall algorithm to determine the shortest path between all pairs of airports using the Floyd-Warshall algorithm. We'll also use the A* search algorithm to determine whether there is even a path between two airports.
 
 Each node will represent an airport and each directed edge will represent a route between two airports. The weights (distance) of each edge (route) will be determined by the distance in miles of the two vertices (airports) that edge connects. We will use the [halversine distance formula](https://www.omnicalculator.com/other/latitude-longitude-distance) to calculate the distance between two airports given their `Longitude` and `Latitude`, both of which are columns in the dataset.
 
@@ -59,9 +59,9 @@ Thus, our total space complexity is $O(r+a)$.
 ### Function Inputs
 We will have two functions in the project. One function will use Dijkstra's shortest path algorithm to determine the shortest path between two specific airport locations. So, the input that the function would take in as parameters would include two `Airport` objects. Additionally, the function would also have to take a `Graph` object as this object would store the adjacency list that is required to perform the Dijkstra's shortest path algorithm. This adjacency list would be a map and have each `Airport ID` as a key, with `Route` objects as values, so these three parameters should be enough for this function.
 
-The other function will use the Floyd-Warshall algorithm to determine the shortest path between all pairs of `Airport ID`’s. Unlike the function that uses Dijkstra's shortest path algorithm, this function doesn’t need to take in two `Airport` object’s as this function covers a more general case of shortest distance between all pairs. Therefore, this function will only take in a `Graph` object as a parameter.
+The other function will use the Floyd-Warshall algorithm to determine the shortest path between all pairs of `Airport ID`’s. This function will give us a matrix with the shortest distance between all pairs of nodes. We can then index into the matrix to get the shortest path between two airports. 
 
-Finally, the uncovered algorithm we will use will be the A* search algorithm, which finds the shortest path from a specified source to a specified goal, unlikely Dijkstra's algorithm which finds the shortest path from a specified source to all possible goals.
+Finally, the uncovered algorithm we will use will be the A* search algorithm, which finds out whether a path exists between two airports, and if so the shortest path. Our heuristic will choose the next vertex in a set of adjacent vertices by finding the vertex which gets us closer in haversine distance to the destination.
 
 ### Function Outputs
 The expected output for the functions (Dijkstra's and A*) that determines the shortest path between two specific airport locations would be a double value that represents the distance between the two airports in miles.

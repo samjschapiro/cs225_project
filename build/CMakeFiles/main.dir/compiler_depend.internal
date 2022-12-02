@@ -252,4 +252,12 @@ CMakeFiles/main.dir/entry/main.cpp.o
  /usr/include/c++/11/tr1/poly_hermite.tcc
  /usr/include/c++/11/tr1/poly_laguerre.tcc
  /usr/include/c++/11/tr1/riemann_zeta.tcc
+ /workspaces/cs225/cs225_project/src/a*_search.hpp
+ /usr/include/c++/11/queue
+ /usr/include/c++/11/deque
+ /usr/include/c++/11/bits/stl_deque.h
+ /usr/include/c++/11/bits/deque.tcc
+ /usr/include/c++/11/debug/deque
+ /usr/include/c++/11/bits/stl_heap.h
+ /usr/include/c++/11/bits/stl_queue.h
 
