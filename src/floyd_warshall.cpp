@@ -4,29 +4,32 @@
 
 using namespace std;
 
-   vector<vector<int>>  floyd_warshall( unordered_map<string, vector<double>> LatLong, 
-                    unordered_map<string, unordered_map<string, double>> connections) { 
-    int num_vertices = LatLong.size();
-    vector<vector<int>> distances(num_vertices, vector<int>(num_vertices, 
-                                                    numeric_limits<double>::infinity()));
-    for (int v = 0; v < num_vertices; v++) {
-        distances[v][v] = 0; // distance between vertex and itself is 0
-    }
+   vector<vector<int>> floyd_warshall(unordered_map<string, unordered_map<string, double>> connections) { 
+        /*
+        Function: Computes the shortest distance between every pair of airports (there are {(num_vertices) choose (2)} of them).
+
+        :param:
+            connections (unordered_map<string, unordered_map<string, double>>): Contains airport connections and distances
+
+        :return
+            distances (vector<vector<int>>): Contains shortest path distance between every pair of airports
+        */
+
 
     // iterate through connections, set distances
-    unordered_map<unordered_map<string, double>>::iterator it;
-    
-    for (it = connections.begin(); it != connections.end(); it++)
-    {
+    int num_vertices = connections.size();
+    vector<vector<int>> distances(num_vertices, vector<int>(num_vertices, numeric_limits<double>::infinity()));
+    unordered_map<unordered_map<string, double>>::iterator it; int row = 0; 
+    for (it = connections.begin(); it != connections.end(); it++) {
         string start = it->first();
         unordered_map<string, double> edges = it->second();
         unordered_map<string, double>::iterator edge_it;
         for (edge_it = edges.begin(); edge_it != edges.end(); edge_it++) {
-            
+            distances[row][distance(connections.begin(), connections.find(edge_it->first))] = edge_it->second;
         }
+        distances[row][row++] = 0; // set distance between every vertex and itself is 0
     }
-
-
+    // floyd warshall algorithm
     for (int k = 0; k < num_vertices; k++) {
         for (int i = 0; i < num_vertices; i++) {
             for (int j = 0; j < num_vertices; j++) {
@@ -36,7 +39,6 @@ using namespace std;
             }
         }
     }
-
-
+    // return distance matrix
     return distances;
 }
