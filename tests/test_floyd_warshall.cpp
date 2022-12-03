@@ -26,7 +26,11 @@ TEST_CASE("Floyd Warshall Works for 1 Stop") {
     unordered_map<string, vector<double>> map = getLatLongMap("../data/airports.dat", 4);
     unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", LatLong, 2, 4);
     vector<vector<int>> distances = floyd_warshall(airportGraph); 
-    REQUIRE(true == true);
+    double calc_distance = round(airportGraph["GKA"]["MAG"]);
+    int row = distance(connections.begin(), connections.find("GKA"));
+    int col = distance(connections.begin(), connections.find("MAG"));
+    double fw_distance = distances[row][col];
+    REQUIRE(calc_distance == fw_distance);
 }
 
 TEST_CASE("Floyd Warshall Works for 2 Stops") {    
