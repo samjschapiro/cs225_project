@@ -6,14 +6,15 @@ using namespace std;
 
 
 unordered_map<string, vector<double>> getLatLongMap(string filename, int keyIdx){
-    // Function: Parses and stores the latitude and longitude of each airport in the openflights dataset into a map
-
-    // :param:
-    //     filename (string): Name of the file to read the airport longitude and latitudes from
-    //     keyIdx (int): The column of the CSV file that has the key of the map (the AirportID)
-
-    // :return
-    //     out (unordered_map<string, vector<string>>): Output map with latitudes and longitudes for each airport
+    /* Function: Parses and stores the latitude and longitude of each airport in the openflights dataset into a map
+     *
+     *   :param:
+     *       filename (string): Name of the file to read the airport longitude and latitudes from
+     *        keyIdx (int): The column of the CSV file that has the key of the map (the AirportID)
+     *
+     *   :return
+     *     out (unordered_map<string, vector<string>>): Output map with latitudes and longitudes for each airport
+     */
 
     unordered_map<string, vector<double>> out;
     fstream fileStream;
