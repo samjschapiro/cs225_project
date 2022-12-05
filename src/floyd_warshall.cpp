@@ -1,5 +1,6 @@
 #include "parse_flight_data.hpp"
 #include "floyd_warshall.hpp"
+#include <limits>
 
 using namespace std;
 
@@ -18,10 +19,10 @@ vector<vector<int>> floyd_warshall(unordered_map<string, unordered_map<string, d
     // iterate through connections, set distances
     int num_vertices = connections.size();
     vector<vector<int>> distances(num_vertices, vector<int>(num_vertices, numeric_limits<double>::infinity()));
-    unordered_map<unordered_map<string, double>>::iterator it; int row = 0; 
+    unordered_map<string, unordered_map<string, double>>::iterator it; int row = 0; 
     for (it = connections.begin(); it != connections.end(); it++) {
-        string start = it->first();
-        unordered_map<string, double> edges = it->second();
+        string start = it->first;
+        unordered_map<string, double> edges = it->second;
         unordered_map<string, double>::iterator edge_it;
         for (edge_it = edges.begin(); edge_it != edges.end(); edge_it++) {
             distances[row][distance(connections.begin(), connections.find(edge_it->first))] = edge_it->second;
