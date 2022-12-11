@@ -20,3 +20,7 @@ To ensure our A* Search was working as intended, we wrote the following test cas
 * Test that the distance between every airport and itself was 0.
 * Randomly choose a pair of airports for which the shortest path has **1 stop**, compute the actual distance, and compare it to the distance returned by the A* Search.
 * Randomly choose a pair of airports for which the shortest path has **2 stops**, compute the actual distance, and compare it to the distance returned by the A* Search.
+
+# Answer to Leading Question
+
+Our leading question was what the shortest flight path in miles between any two airports in the OpenFlights dataset was. Our implementation of the A* Search and Floyd Warshall algorithms successfully answered this question for us.
