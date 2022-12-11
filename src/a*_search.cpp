@@ -16,11 +16,18 @@ double a_star_search(string source, string dest, unordered_map<string, vector<do
         double dist_to = get<1>(curr);
         if (curr_airport == dest){
             string c = curr_airport;
+            vector<string> path;
             while (c != source){
-                cout<<c<<endl;
+                path.push_back(c);
                 c = airport_dist[c].first;
             }
-            cout<<c<<endl;
+            path.push_back(c);
+            reverse(path.begin(), path.end());
+            cout<<"Path found, path from " + source + " to " + dest + " below:"<<endl;
+            for (string airport: path){
+                cout<<airport<<endl;
+            }
+            cout<<"Distance: "<<endl;
             return dist_to; // found shortest path to destination airport
         } 
         for (pair<string, double> neighbors : connections[curr_airport]){
@@ -31,6 +38,7 @@ double a_star_search(string source, string dest, unordered_map<string, vector<do
             }
         }
     }
+    cout<<"Path not found"<<endl;
     return -1;
 }
 
