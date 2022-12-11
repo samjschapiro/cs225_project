@@ -46,34 +46,33 @@ To ensure that there are no errors with the route data, before serializing a `Ro
 
 
 ## Data Storage
-To serialize each entry in the airport dataset, we will create an `Airport` class. This class will store an airport's `Airport ID`, `Latitude`, and `Longitude` as private member variables. We will likely have getters and setters for each member variable. We will also store an `std::set` as a class variable to consist of all the valid `Airport IDs`. Let $a$ be the number of airports in the dataset. We are using $O(a)$ space to store each `Airport`.
+To parse our data, we first create a map from airport code to a latitude and longitude to speed up lookup. If there are $a$ airports, the space to store this unordered map is $O(a)$. Using that information, we build a graph storing all the routes in the form of an **adjacency list**. This adjacency list represented as an unordered map with the keys being strings representing airport codes. The value of the unordered map is another unordered map with the keys being strings repesenting all the airport codes that can be directly reached from the key of the outer map and the values being the distances away those airports are. There will be $r$ edges in this graph and $a$ vertices in this graph (by the handshaking theorem). Consequently, we are using $O(r + a)$ space to store the graph representation of this dataset. For the Floyd-Warshall algorithm, we need to create an adjacency matrix, for which we are using $O(a^2)$ space.
 
-We will then create a `Route` class for each route. This class will store `Source Airport ID` and `Destination Airport ID` as private member variables and will likely have getters and setters for each member variable. Let $r$ be the number of airports in the dataset. We are using $O(r)$ space to store each `Route`.
-
-Finally, we will create a `Graph` class that will contain the graph comprising each possible route in the dataset. The graph will be stored as an **adjacency list.** There will be $r$ edges in this graph and $a$ vertices in this graph (by the handshaking theorem). Consequently, we are using $O(r + a)$ space to store the graph representation of this dataset.
-
-Thus, our total space complexity is $O(r+a)$.
+Thus, our total space complexity is $O(a^2)$.
 
 ## Algorithm 
 
 ### Function Inputs
-We will have two functions in the project. One function will use Dijkstra's shortest path algorithm to determine the shortest path between two specific airport locations. So, the input that the function would take in as parameters would include two `Airport` objects. Additionally, the function would also have to take a `Graph` object as this object would store the adjacency list that is required to perform the Dijkstra's shortest path algorithm. This adjacency list would be a map and have each `Airport ID` as a key, with `Route` objects as values, so these three parameters should be enough for this function.
+We will have three functions in the project. One function will use the uncovered A* shortest path algorithm to determine the shortest path between two specific airport locations. So, the input that the function would take in as parameters are a string representing the source airport, another string representing the destination airport, an adjacency list (described in the data storage section) representing all the routes in the airport, and a map storing the latitude and longitude for each airport to aid in the heuristic calculation. 
 
-The other function will use the Floyd-Warshall algorithm to determine the shortest path between all pairs of `Airport ID`’s. This function will give us a matrix with the shortest distance between all pairs of nodes. We can then index into the matrix to get the shortest path between two airports. 
+The other function will use the Floyd-Warshall algorithm to determine the shortest path between all pairs of `Airport ID`’s. This function will take in the adjacency list described earlier. 
 
-Finally, the uncovered algorithm we will use will be the A* search algorithm, which finds out whether a path exists between two airports, and if so the shortest path. Our heuristic will choose the next vertex in a set of adjacent vertices by finding the vertex which gets us closer in haversine distance to the destination.
+Finally, our last algorithm will be BFS, which will operate on the adjacency list. The function for this will take in a source airport, a destination airport, and the adjacency list. 
 
 ### Function Outputs
-The expected output for the functions (Dijkstra's and A*) that determines the shortest path between two specific airport locations would be a double value that represents the distance between the two airports in miles.
+The expected output for A* search would be a double value that represents the distance between the two airports in miles.
 
-The expected output for the function that determines the shortest path between all pairs of `Airport ID`’s is a two-dimensional vector. Each entry in this vector would correspond to an index i and index j, and has a double value representing the distance in between `Airport ID` i and `Airport ID` j.
+The expected output for BFS would be a vector containing the shortest path in terms of number of stops from the source to the destination.
+
+The expected output for the Floyd-Warshall's function that determines the shortest path between all pairs of `Airport ID`’s is a two-dimensional vector. Each entry in this vector would correspond to an index i and index j, and has a double value representing the distance in between `Airport ID` i and `Airport ID` j.
 
 
 
 ### Function Efficiency
-The function that will use Dijkstra's shortest path algorithm to determine the shortest path between two specific airport locations makes use of breadth-first-search. Let $a$ be the number of airports in the dataset and let $r$ be the number of routes. We expect this algorithm to be $O(|r| + |a|log(|a|))$ time complexity. This is because each route would be visited a max of 2 times, which is asymptotic to $O(|r|)$. Also, each airport is visited once to add to the heap and once to pop off the heap, which is $O(|a|log(|a|))$. Our target space complexity is $O(|a|)$, which would come from the heap.
 
-A separate function will also use the A* search algorithm, which has $O(|r|)$ time-complexity and $O(|a|)$ space complexity.
+The A* search algorithm function has $O(|a*log(a)|)$ time-complexity and $O(|a|)$ space complexity. In the worst case, all airports will be visited, hence the linear space complexity. Every visited airport will be added to the heap, hence the $O(|a*log(a)|)$ time complexity as inserting into the heap is logarithmetic. The heuristic is just lookup in an unordered map, so that is just a constant call.
+
+The BFS function has $O(|a|)$ time-complexity and $O(|a|)$ space complexity. In the worst case, all airports will be visited, hence the linear space complexity. Since we are using a queue, the time complexity will also be linear as inserting and popping from a queue are both constant-time operations.
 
 Let $a$ be the number of airports in the dataset. The space complexity of the algorithm to determine the shortest path between all pairs of Airport ID’s is the size of the two-dimensional vector that the function returns. This is why the space complexity of this algorithm is $O(a^2)$. The implementation of this algorithm includes three nested for-loops that loop through all airports, so we expect the time complexity of the function to be $O(a^3)$. 
 
@@ -100,8 +99,6 @@ Let $a$ be the number of airports in the dataset. The space complexity of the al
 ###### 11/14: Sprint 3
 
 - BFS Traversal 
- 
-- Choose and Build Method of Dijkstra's Algorithm
 
 - Choose and Build Method of Floyd-Warshall Algorithm
 
@@ -110,12 +107,10 @@ Let $a$ be the number of airports in the dataset. The space complexity of the al
 
 ###### 11/28: Sprint 4
 
-- Dijkstra's Algorithm
-
 - Floyd-Warshall Algorithm
 
 - A* Search Algorithm
 
-###### 12/5: Spring 5
+###### 12/5: Sprint 5
 
 - Make Sure All Deliverables are Finalized
