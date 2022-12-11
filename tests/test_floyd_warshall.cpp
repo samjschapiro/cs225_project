@@ -7,7 +7,7 @@
 
 TEST_CASE("Floyd Warshall Distances Matrix is Right Size") {    
     unordered_map<string, vector<double>> map = getLatLongMap("../data/airports.dat", 4);
-    unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", LatLong, 2, 4);
+    unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", map, 2, 4);
     vector<vector<int>> distances = floyd_warshall(airportGraph);
     REQUIRE(distances.size() == airportGraph.size()); // right num of rows
     REQUIRE(distances[0].size() == airportGraph.size()); // right num of cols
@@ -24,7 +24,7 @@ TEST_CASE("Floyd Warshall Returns 0 Distance From Self") {
 
 TEST_CASE("Floyd Warshall Works for 1 Stop") {   
     unordered_map<string, vector<double>> map = getLatLongMap("../data/airports.dat", 4);
-    unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", LatLong, 2, 4);
+    unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", map, 2, 4);
     vector<vector<int>> distances = floyd_warshall(airportGraph); 
     double calc_distance = round(airportGraph["GKA"]["MAG"]);
     int row = distance(connections.begin(), connections.find("GKA"));
