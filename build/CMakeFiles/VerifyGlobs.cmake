@@ -39,7 +39,6 @@ set(OLD_GLOB
   "/workspaces/cs225_project/src/a*_search.cpp"
   "/workspaces/cs225_project/src/dijkstra.cpp"
   "/workspaces/cs225_project/src/floyd_warshall.cpp"
-  "/workspaces/cs225_project/src/graph.cpp"
   "/workspaces/cs225_project/src/parse_flight_data.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

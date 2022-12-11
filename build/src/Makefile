@@ -203,30 +203,6 @@ floyd_warshall.cpp.s:
 	cd /workspaces/cs225_project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/floyd_warshall.cpp.s
 .PHONY : floyd_warshall.cpp.s
 
-graph.o: graph.cpp.o
-.PHONY : graph.o
-
-# target to build an object file
-graph.cpp.o:
-	cd /workspaces/cs225_project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.o
-.PHONY : graph.cpp.o
-
-graph.i: graph.cpp.i
-.PHONY : graph.i
-
-# target to preprocess a source file
-graph.cpp.i:
-	cd /workspaces/cs225_project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.i
-.PHONY : graph.cpp.i
-
-graph.s: graph.cpp.s
-.PHONY : graph.s
-
-# target to generate assembly for a file
-graph.cpp.s:
-	cd /workspaces/cs225_project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.s
-.PHONY : graph.cpp.s
-
 parse_flight_data.o: parse_flight_data.cpp.o
 .PHONY : parse_flight_data.o
 
@@ -269,9 +245,6 @@ help:
 	@echo "... floyd_warshall.o"
 	@echo "... floyd_warshall.i"
 	@echo "... floyd_warshall.s"
-	@echo "... graph.o"
-	@echo "... graph.i"
-	@echo "... graph.s"
 	@echo "... parse_flight_data.o"
 	@echo "... parse_flight_data.i"
 	@echo "... parse_flight_data.s"
