@@ -17,12 +17,12 @@ TEST_CASE("A* Works for 1 Stop") {
     unordered_map<string, vector<double>> LatLong = getLatLongMap("../data/airports.dat", 4);
     unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", LatLong, 2, 4);
     double dist = a_star_search("GKA", "MAG", LatLong, airportGraph);
-    REQUIRE(round(dist) == round(91.58));
+    REQUIRE(round(dist) == round(91.58)); // compare calculated distance with ground truth found through online calculators
 }
 
 TEST_CASE("A* Works for 2 Stops") {    
     unordered_map<string, vector<double>> LatLong = getLatLongMap("../data/airports.dat", 4);
     unordered_map<string, unordered_map<string, double>> airportGraph = buildAirportGraph("../data/routes.dat", LatLong, 2, 4);
     double dist = a_star_search("LAS", "HND", LatLong, airportGraph);
-    REQUIRE(round(dist) == round(11688.9));
+    REQUIRE(round(dist) == round(11688.9)); // compare calculated distance with ground truth found through online calculators
 }
