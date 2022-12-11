@@ -111,24 +111,10 @@ src/CMakeFiles/src.dir/floyd_warshall.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/floyd_warshall.cpp.s"
 	cd /workspaces/cs225_project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225_project/src/floyd_warshall.cpp -o CMakeFiles/src.dir/floyd_warshall.cpp.s
 
-src/CMakeFiles/src.dir/graph.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/graph.cpp.o: ../src/graph.cpp
-src/CMakeFiles/src.dir/graph.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/src.dir/graph.cpp.o"
-	cd /workspaces/cs225_project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/graph.cpp.o -MF CMakeFiles/src.dir/graph.cpp.o.d -o CMakeFiles/src.dir/graph.cpp.o -c /workspaces/cs225_project/src/graph.cpp
-
-src/CMakeFiles/src.dir/graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph.cpp.i"
-	cd /workspaces/cs225_project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225_project/src/graph.cpp > CMakeFiles/src.dir/graph.cpp.i
-
-src/CMakeFiles/src.dir/graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph.cpp.s"
-	cd /workspaces/cs225_project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225_project/src/graph.cpp -o CMakeFiles/src.dir/graph.cpp.s
-
 src/CMakeFiles/src.dir/parse_flight_data.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/parse_flight_data.cpp.o: ../src/parse_flight_data.cpp
 src/CMakeFiles/src.dir/parse_flight_data.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/src.dir/parse_flight_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/src.dir/parse_flight_data.cpp.o"
 	cd /workspaces/cs225_project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/parse_flight_data.cpp.o -MF CMakeFiles/src.dir/parse_flight_data.cpp.o.d -o CMakeFiles/src.dir/parse_flight_data.cpp.o -c /workspaces/cs225_project/src/parse_flight_data.cpp
 
 src/CMakeFiles/src.dir/parse_flight_data.cpp.i: cmake_force
@@ -144,7 +130,6 @@ src_OBJECTS = \
 "CMakeFiles/src.dir/a*_search.cpp.o" \
 "CMakeFiles/src.dir/dijkstra.cpp.o" \
 "CMakeFiles/src.dir/floyd_warshall.cpp.o" \
-"CMakeFiles/src.dir/graph.cpp.o" \
 "CMakeFiles/src.dir/parse_flight_data.cpp.o"
 
 # External object files for target src
@@ -153,11 +138,10 @@ src_EXTERNAL_OBJECTS =
 src/libsrc.a: src/CMakeFiles/src.dir/a*_search.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/dijkstra.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/floyd_warshall.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/graph.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/parse_flight_data.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libsrc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libsrc.a"
 	cd /workspaces/cs225_project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd /workspaces/cs225_project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 
