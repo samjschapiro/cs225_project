@@ -27,4 +27,4 @@ To ensure our A* Search was working as intended, we wrote the following test cas
 
 # Answer to Leading Question
 
-Our leading question was what the shortest flight path in miles between any two airports in the OpenFlights dataset was. Our implementation of the A* Search and Floyd Warshall algorithms successfully answered this question for us.
+Our leading question was what the shortest flight path in miles between any two airports in the OpenFlights dataset was. Our implementation of the A* Search and Floyd Warshall algorithms successfully answered this question for us. In addition, since Floyd-Warshall gave us statistics about the distances between every pair of airports, we decided it would be interesting to gain statistics on the connectedness of airports, such as the shortest distance between two connected airports, the longest distance between two connected airports, and the average distance between airports.
