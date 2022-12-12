@@ -6,8 +6,8 @@
 ## Tests
 To ensure our BFS was working as intended, we wrote the following test cases:
 * Test that the distance between every airport and itself was 0.
-* Randomly choose a pair of airports with **1 stop** between them and ensure that BFS returns that they are connected.
-* Randomly choose a pair of airports with **2 stops** between them and ensure that BFS returns that they are connected.
+* Randomly choose a pair of airports with **1 stop** between them and ensure that BFS returns that they are connected by the one stop.
+* Randomly choose a pair of airports with **2 stops** between them and ensure that BFS returns that they are connected by the two stops.
 
 
 # Floyd-Warshall
