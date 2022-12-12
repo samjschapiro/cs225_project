@@ -7,13 +7,13 @@ using namespace std;
 
 unordered_map<string, vector<double>> getLatLongMap(string filename, int keyIdx){
     /* Function: Parses and stores the latitude and longitude of each airport in the openflights dataset into a map
-     *
-     *   :param:
-     *       filename (string): Name of the file to read the airport longitude and latitudes from
-     *        keyIdx (int): The column of the CSV file that has the key of the map (the AirportID)
-     *
-     *   :return
-     *     out (unordered_map<string, vector<string>>): Output map with latitudes and longitudes for each airport
+     
+         :param:
+             filename (string): Name of the file to read the airport longitude and latitudes from
+              keyIdx (int): The column of the CSV file that has the key of the map (the AirportID)
+     
+         :return
+           out (unordered_map<string, vector<string>>): Output map with latitudes and longitudes for each airport
      */
 
     unordered_map<string, vector<double>> out;
@@ -38,16 +38,17 @@ unordered_map<string, vector<double>> getLatLongMap(string filename, int keyIdx)
 }
 
 int SplitString(const string & str1, char sep, vector<string> &fields) {
-    // Function: A helper function to split a passed string by a designated separator.
+    /* Function: A helper function to split a passed string by a designated separator.
 
-    // :param:
-    //    str1 (const string&): The string to split
-    //         Note: passed by reference
-    //    sep (char): The separator by which to split the string
-    //    fields (vector<string>&): The split parts of the string
-    //         Note: passed by reference
-    
-    // :return
+        :param:
+            str1 (const string&): The string to split
+                    Note: passed by reference
+            sep (char): The separator by which to split the string
+            fields (vector<string>&): The split parts of the string
+                    Note: passed by reference
+        :return
+            out (int): size of string split
+    */ 
     
     string str = str1;
     string::size_type pos;
@@ -64,17 +65,18 @@ int SplitString(const string & str1, char sep, vector<string> &fields) {
 // val -> next airport, distance
 unordered_map<string, unordered_map<string, double>> buildAirportGraph(string route_file, unordered_map<string, vector<double>> latLongMap, 
                                                                                  int sourceIdx, int destIdx) {
-    // Function: Builds the airport/route graph from a given latitude/longitude map and route file.
+    /*  Function: Builds the airport/route graph from a given latitude/longitude map and route file.
 
-    // :param:
-    //    route_file (string): The file containing the route information
-    //    latLongMap (unordered_map<string, vector<double>>): A map of latitude and longitudes for each airport
-    //    sourceIdx (int): The index of the source airport column in the route file 
-    //    destIdx (destIdx): The index of the destination airport column in the route file
-    
-    // :return
-    //    out (unordered_map<string, unordered_map<string, double>>): The airport graph with K = airport, and V = a map of all
-    //                                                                connected airports and their respective distances.
+        :param:
+        route_file (string): The file containing the route information
+        latLongMap (unordered_map<string, vector<double>>): A map of latitude and longitudes for each airport
+        sourceIdx (int): The index of the source airport column in the route file 
+        destIdx (destIdx): The index of the destination airport column in the route file
+        
+        :return
+        out (unordered_map<string, unordered_map<string, double>>): The airport graph with K = airport, and V = a map of all
+                                                                    connected airports and their respective distances.
+    */
 
     fstream fileStream;
     fileStream.open(route_file);
@@ -103,16 +105,17 @@ unordered_map<string, unordered_map<string, double>> buildAirportGraph(string ro
 }
 
 double haversine(double lat1, double lon1, double lat2, double lon2) {
-    // Function: Computes the Haversine distance formula given two latitude/longitude pairs.
+    /* Function: Computes the Haversine distance formula given two latitude/longitude pairs.
 
-    // :param:
-    //     lat1 (double): Latitude of first pair
-    //     lon1 (double): Longitude of first pair
-    //     lat2 (double): Latitude of second pair
-    //     lon2 (double): Longitude of second pair
-        
-    // :return
-    //     out (double): The distance between the pairs.
+        :param:
+            lat1 (double): Latitude of first pair
+            lon1 (double): Longitude of first pair
+            lat2 (double): Latitude of second pair
+            lon2 (double): Longitude of second pair
+            
+        :return
+            out (double): The distance between the pairs.
+    */
 
     // distance between latitudes and longitudes
     double dLat = (lat2 - lat1) * M_PI / 180.0;

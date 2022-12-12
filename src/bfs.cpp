@@ -7,7 +7,9 @@
 
 using namespace std;
 
-/*
+vector<string> bfs(string source, string dest, unordered_map<string, unordered_map<string, double>> connections)
+{
+    /*
     Function: Traverses through different airports to get from one airport to another airport
 
     :param:
@@ -18,8 +20,6 @@ using namespace std;
     :return
         path (vector<string>): Contains a path between every pair of airports
     */
-vector<string> bfs(string source, string dest, unordered_map<string, unordered_map<string, double>> connections)
-{
     // Initialize BFS with queue and map of airports
     queue<string> q;
     unordered_map<string, string> airport_path; // Unordered map use for faster lookup time
