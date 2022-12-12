@@ -1,2 +1,2 @@
-/usr/bin/ar qc libsrc.a "CMakeFiles/src.dir/a*_search.cpp.o" CMakeFiles/src.dir/dijkstra.cpp.o CMakeFiles/src.dir/floyd_warshall.cpp.o CMakeFiles/src.dir/parse_flight_data.cpp.o
+/usr/bin/ar qc libsrc.a "CMakeFiles/src.dir/a*_search.cpp.o" CMakeFiles/src.dir/bfs.cpp.o CMakeFiles/src.dir/dijkstra.cpp.o CMakeFiles/src.dir/floyd_warshall.cpp.o CMakeFiles/src.dir/parse_flight_data.cpp.o
 /usr/bin/ranlib libsrc.a

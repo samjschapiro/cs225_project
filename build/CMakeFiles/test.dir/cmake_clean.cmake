@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test.dir/tests/test_a*_search.cpp.o"
   "CMakeFiles/test.dir/tests/test_a*_search.cpp.o.d"
+  "CMakeFiles/test.dir/tests/test_bfs.cpp.o"
+  "CMakeFiles/test.dir/tests/test_bfs.cpp.o.d"
   "CMakeFiles/test.dir/tests/test_dijkstra.cpp.o"
   "CMakeFiles/test.dir/tests/test_dijkstra.cpp.o.d"
   "CMakeFiles/test.dir/tests/test_floyd_warshall.cpp.o"

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/src.dir/a*_search.cpp.o"
   "CMakeFiles/src.dir/a*_search.cpp.o.d"
+  "CMakeFiles/src.dir/bfs.cpp.o"
+  "CMakeFiles/src.dir/bfs.cpp.o.d"
   "CMakeFiles/src.dir/dijkstra.cpp.o"
   "CMakeFiles/src.dir/dijkstra.cpp.o.d"
   "CMakeFiles/src.dir/floyd_warshall.cpp.o"
