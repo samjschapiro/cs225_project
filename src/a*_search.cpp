@@ -41,7 +41,7 @@ double a_star_search(string source, string dest, unordered_map<string, vector<do
             for (string airport: path){
                 cout<<airport<<endl;
             }
-            cout<<"Distance: "<<endl;
+            cout<<"Distance: "<< dist_to<<endl;
             return dist_to;
         } 
         for (pair<string, double> neighbors : connections[curr_airport]){
