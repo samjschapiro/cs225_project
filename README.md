@@ -18,8 +18,5 @@ Our GitHub repo has six main folders:
 
 Our written report is in the main directory, titled `results.md`, and our presentation video is also located in the main directory, titled *blank*.
 
-# Running Instructions
-## Running Executable
-You should provide full instructions on how to build and run your executable, including how to define the input data and output location for each method. 
-## Running Test Suite
-You should also have instructions on how to build and run your test suite, including a general description on what tests you have created.
+## Running Instructions
+To run our project, the user must first delete the build folder, create a new build folder, change directory into the build folder, and run cmake .. to populate the build folder. Once the build folder is populated with the proper cmake files, the user must run make to compile the program. Once the program is compiled, the user can run the program by type in ./main into the command line, which will then illustrate a prompt to insert a number from 1-3 depending on what the user is looking for from the data. Once the user inserts any of the numbers, the program will prompt the user to enter source and arrival airports. Using this data, the program will run either A-Star, Breadth First Search, or Floyd-Warshall depending on what the user is looking for. The program will then output the answer in the terminal. The program can either be run again by entering a new number from 1-3 or can be terminated by enter 0 or any number greater than 3.
