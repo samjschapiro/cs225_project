@@ -19,5 +19,7 @@ Our GitHub repo has six main folders:
 Our written report is in the main directory, titled `results.md`, and our presentation video is also located in the main directory, titled *blank*.
 
 # Running Instructions
-## You should provide full instructions on how to build and run your executable, including how to define the input data and output location for each method. 
-## You should also have instructions on how to build and run your test suite, including a general description on what tests you have created.
+## Running Executable
+You should provide full instructions on how to build and run your executable, including how to define the input data and output location for each method. 
+## Running Test Suite
+You should also have instructions on how to build and run your test suite, including a general description on what tests you have created.
