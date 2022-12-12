@@ -39,9 +39,9 @@ Then, we will use the `routes.dat` dataset, which contains all the routes betwee
 
 
 ## Data Correction
-As mentioned above, we will be using only the `Airport ID`, `Latitude`, and `Longitude` columns for each `Airport`. If a missing value is present in any of the four columns, we will disregard that entry. We will also check that each `Latitude` value is between `-90` and `90` and that each `Longitude` value is between `-180` and `180`, since these are the only realistic values those quantities can take.
+As mentioned above, we will be using only the `Airport ID`, `Latitude`, and `Longitude` columns for each airport. If a missing value is present in any of the four columns, we will disregard that entry. We will also check that each `Latitude` value is between `-90` and `90` and that each `Longitude` value is between `-180` and `180`, since these are the only realistic values those quantities can take.
 
-To ensure that there are no errors with the route data, before serializing a `Route` object, we will check that its `Source Airport ID` and `Destination Airport ID` exist in our set of airports.
+To ensure that there are no errors with the route data, before serializing a route, we will check that its `Source Airport ID` and `Destination Airport ID` exist in our set of airports.
 
 
 
