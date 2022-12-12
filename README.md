@@ -16,7 +16,7 @@ Our GitHub repo has six main folders:
 - **src**: contains the code for all our algorithms
 - **tests**: stores our test cases for each algorithm and the flight parsing
 
-Our written report is in the main directory, titled `results.md`, and our presentation video is also located in the main directory, titled *blank*.
+Our written report is in the admin directory, titled `results.md`, and our presentation video is located at this link: *blank*.
 
 ## Running Instructions
 1. Enter `mkdir build` into the terminal from the root of the repository to create a new build folder. Then run `cd build` to change into that folder; then run `cmake ..` to set up the cmake files.
