@@ -3,6 +3,9 @@
 # Algorithms
 
 # Breadth First Search (BFS)
+## Highlights
+* When asked to find path from two airports with no direct flight, such as SFO and SJC, it realizes this and finds a connected flight in order to make it possible.
+
 ## Tests
 To ensure our BFS was working as intended, we wrote the following test cases:
 * Test that the distance between every airport and itself was 0.
@@ -11,6 +14,9 @@ To ensure our BFS was working as intended, we wrote the following test cases:
 
 
 # Floyd-Warshall
+## Highlights
+* When used on a subset of 169 airports, the algorithm was able to determine a minimum distance of 45.37 kilometers, average distance of 4708.38 kilometers, and maximum distance of  29416.6 between any two airports in the subset.
+
 ## Tests
 To ensure our Floyd Warshall (all pairs shortest path) was working as intended, we wrote the following test cases:
 * Test that the output was the right size (a `num_vertices` by `num_vertices` 2-D vector of doubles).
@@ -19,6 +25,9 @@ To ensure our Floyd Warshall (all pairs shortest path) was working as intended, 
 * Randomly choose a pair of airports for which the shortest path has **2 stops**, compute the actual distance, and compare it to the distance returned by the Floyd Warshall algorithm.
 
 # A* Search
+## Highlights
+* When attempting to find shortest distance to get from SJC to HND, this function calculated that teh shortest distance is 11287.3 kilometers.
+
 ## Tests
 To ensure our A* Search was working as intended, we wrote the following test cases:
 * Test that the distance between every airport and itself was 0.
