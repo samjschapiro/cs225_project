@@ -16,8 +16,8 @@ vector<vector<double>> floyd_warshall(unordered_map<string, unordered_map<string
     */
 
 
-    // iterate through connections, set distances
     int num_vertices = connections.size();
+    // iterate through connections, set default distances
     vector<vector<double>> distances(num_vertices, vector<double>(num_vertices, numeric_limits<double>::infinity()));
     unordered_map<string, unordered_map<string, double>>::iterator it; int row = 0; 
     for (it = connections.begin(); it != connections.end(); it++) {
@@ -25,7 +25,10 @@ vector<vector<double>> floyd_warshall(unordered_map<string, unordered_map<string
         unordered_map<string, double> edges = it->second;
         unordered_map<string, double>::iterator edge_it;
         for (edge_it = edges.begin(); edge_it != edges.end(); edge_it++) {
-            distances[row][distance(connections.begin(), connections.find(edge_it->first))] = edge_it->second;
+            // ensure that the route actually exists in connections
+            if (distance(connections.begin(), connections.find(edge_it->first)) < num_vertices && row < num_vertices) { 
+                distances[row][distance(connections.begin(), connections.find(edge_it->first))] = edge_it->second;
+            }
         }
         distances[row][row] = 0.0; // set distance between every vertex and itself is 0
         row++;
